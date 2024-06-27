@@ -1,0 +1,32 @@
+5)U afinní šifry: Kolik existuje unikátních klíčů? Porovnejte s Caesarovou šifrou. Jak byste mohli prostor klíčů ještě zvětšit?
+
+
+Afinní šifra je typ monoalfabetické substituční šifry, která používá matematický vztah mezi znaky vstupního a výstupního textu. Klíč pro afinní šifru se skládá ze dvou čísel "a" a "b", kde
+"a" musí být nesoudělné s velikostí abecedy "m", a "b" je libovolné celé číslo. Šifrovací funkce je definována jako:
+
+C = (a x P + b) mod m
+
+,kde "P" je písmeno otevřeného textu převedené na číselnou hodnotu. Počet unikátních klíčů: "a" musí být nesoudělné s "m". Pro m=26, je počet takových "a" dán Eulerovou funkcí
+ϕ(m), což je 12, když bereme v úvahu prvočísla menší než 26.
+
+"b" může nabývat jakékoli hodnoty od 0 do m−1, tedy existuje 26 možností pro b.
+
+Celkový počet unikátních klíčů pro afinní šifru je tedy:
+12×26=312.
+
+
+Caesarova šifra
+Caesarova šifra je speciální případ afinní šifry, kde "a=1" a "b" je posun v rozsahu 0 až m−1. Tedy pro m=26 počet unikátních klíčů existuje 26 možností (od 0 do 25).
+
+
+Rozšíření klíčového prostoru afinní šifry
+Klíčový prostor afinní šifry může být rozšířen například zvýšením velikosti abecedy, tím, že zahrnete další znaky nebo použijete větší abecedu (například všechna ASCII znaky).
+
+
+
+6)U transpoziční šifry je očividně slabým místem způsob doplnění zprávy (padding). Jak byste toto slabé místo ošetřili?
+
+
+Použití náhodného doplnění (padding), který neodpovídá žádnému ustálenému vzoru a je obtížné jej odlišit od skutečného obsahu zprávy.
+Doplnění může být provedeno za použití pseudonáhodného generátoru čísel, který je inicializován tajným klíčem, takže pouze správný příjemce, který zná klíč, může správně interpretovat konec zprávy a odstranit padding.
+
